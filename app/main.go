@@ -58,7 +58,11 @@ func init() {
 }
 
 func newClient() *openai.Client {
-	sk := "<secret key>"
+	sk := os.Getenv("SECRET_KEY")
+	if sk == "" {
+		panic("Get empty SECRET_KEY from env")
+	}
+
 	config := openai.DefaultConfig(sk)
 	proxyUrl, err := url.Parse("http://localhost:7890") //local proxy
 	if err != nil {
