@@ -1,4 +1,4 @@
-# this is an hello world program which call openai , written in golang
+# This is  a very simple interactive demo to talk with openai
 
 ## prerequisite
 
